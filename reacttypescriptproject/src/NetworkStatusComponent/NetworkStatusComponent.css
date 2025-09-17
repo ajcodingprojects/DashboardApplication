@@ -1,0 +1,211 @@
+.network-status-container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    gap: 16px;
+}
+
+.network-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8px;
+}
+
+.network-title {
+    margin: 0 !important;
+    font-weight: bold !important;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.network-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.network-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.network-item:last-child {
+    border-bottom: none;
+}
+
+.network-item-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.network-icon {
+    color: rgba(255, 255, 255, 0.8) !important;
+    font-size: 1.2rem !important;
+}
+
+.network-label {
+    color: rgba(255, 255, 255, 0.9) !important;
+    font-weight: 600 !important;
+}
+
+.network-value {
+    color: rgba(255, 255, 255, 0.8) !important;
+    font-weight: 500 !important;
+    font-family: 'Courier New', monospace !important;
+}
+
+.signal-chip {
+    font-weight: bold !important;
+}
+
+.signal-chip.excellent {
+    background: rgba(76, 175, 80, 0.2) !important;
+    color: #4caf50 !important;
+    border: 1px solid rgba(76, 175, 80, 0.3) !important;
+}
+
+.signal-chip.good {
+    background: rgba(139, 195, 74, 0.2) !important;
+    color: #8bc34a !important;
+    border: 1px solid rgba(139, 195, 74, 0.3) !important;
+}
+
+.signal-chip.fair {
+    background: rgba(255, 152, 0, 0.2) !important;
+    color: #ff9800 !important;
+    border: 1px solid rgba(255, 152, 0, 0.3) !important;
+}
+
+.signal-chip.poor {
+    background: rgba(244, 67, 54, 0.2) !important;
+    color: #f44336 !important;
+    border: 1px solid rgba(244, 67, 54, 0.3) !important;
+}
+
+.offline-message {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    gap: 12px;
+    text-align: center;
+}
+
+.offline-icon {
+    color: rgba(244, 67, 54, 0.7) !important;
+    font-size: 3rem !important;
+}
+
+.offline-text {
+    color: rgba(255, 255, 255, 0.8) !important;
+    font-weight: 600 !important;
+}
+
+.offline-caption {
+    color: rgba(255, 255, 255, 0.5) !important;
+}
+
+.network-footer {
+    margin-top: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    padding: 8px 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.last-updated {
+    color: rgba(255, 255, 255, 0.5) !important;
+    font-size: 0.7rem !important;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.test-network-fab {
+    margin-left: auto !important;
+    background: rgba(33, 150, 243, 0.8) !important;
+    color: rgba(255, 255, 255, 0.9) !important;
+    border: 1px solid rgba(33, 150, 243, 0.3) !important;
+    backdrop-filter: blur(10px) !important;
+    font-size: 0.75rem !important;
+    height: 32px !important;
+    min-height: 32px !important;
+}
+
+.test-network-fab:hover {
+    background: rgba(33, 150, 243, 1) !important;
+    border-color: rgba(33, 150, 243, 0.5) !important;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(33, 150, 243, 0.3) !important;
+}
+
+.test-network-fab:disabled {
+    background: rgba(255, 255, 255, 0.1) !important;
+    color: rgba(255, 255, 255, 0.4) !important;
+    border-color: rgba(255, 255, 255, 0.1) !important;
+}
+
+/* Spinning animation for the refresh icon */
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+    .network-status-container {
+        padding: 16px;
+        gap: 12px;
+    }
+    
+    .network-content {
+        gap: 12px;
+    }
+    
+    .network-item {
+        padding: 10px 0;
+    }
+    
+    .network-item-header {
+        gap: 8px;
+    }
+    
+    .network-icon {
+        font-size: 1.1rem !important;
+    }
+    
+    .offline-icon {
+        font-size: 2.5rem !important;
+    }
+    
+    .network-footer {
+        flex-direction: column;
+        gap: 12px;
+        align-items: center;
+    }
+    
+    .last-updated {
+        position: static;
+        transform: none;
+        order: 2;
+    }
+    
+    .test-network-fab {
+        margin-left: 0 !important;
+        order: 1;
+    }
+}

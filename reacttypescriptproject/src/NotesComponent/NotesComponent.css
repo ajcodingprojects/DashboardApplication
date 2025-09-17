@@ -1,0 +1,126 @@
+.notes-container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 16px;
+    gap: 12px;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+.notes-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 8px;
+    flex-shrink: 0;
+}
+
+.notes-title {
+    margin: 0 !important;
+    font-weight: bold !important;
+    color: #fafafa;
+}
+
+.notes-controls {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 4px;
+}
+
+.unsaved-changes {
+    color: #ff9800 !important;
+    font-style: italic !important;
+    font-weight: 500 !important;
+}
+
+.last-saved {
+    color: #666 !important;
+    font-size: 0.75rem !important;
+}
+
+.save-button {
+    min-width: 120px !important;
+}
+
+.notes-input {
+    flex: 1 1 auto;
+    min-height: 0;
+    overflow: hidden;
+}
+
+.notes-input .MuiInputBase-root {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.notes-input .MuiInputBase-input {
+    flex: 1 1 auto;
+    min-height: 0 !important;
+    max-height: none !important;
+    resize: none !important;
+    overflow-y: auto !important;
+}
+
+.notes-textarea {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif !important;
+    font-size: 0.95rem !important;
+    line-height: 1.6 !important;
+    border-radius: 8px !important;
+    height: 100% !important;
+}
+
+.notes-footer {
+    display: flex;
+    justify-content: center;
+    margin-top: 8px;
+    flex-shrink: 0;
+}
+
+.auto-save-info {
+    color: #888 !important;
+    font-style: italic !important;
+    text-align: center;
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+    .notes-header {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    
+    .notes-controls {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+    }
+    
+    .save-button {
+        min-width: 100px !important;
+    }
+    
+    .notes-input .MuiInputBase-root {
+        font-size: 0.9rem !important;
+    }
+}
+
+@media (max-width: 400px) {
+    .notes-container {
+        padding: 12px;
+    }
+    
+    .notes-controls {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    
+    .save-button {
+        width: 100%;
+    }
+}

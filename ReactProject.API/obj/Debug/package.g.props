@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project>
+  <PropertyGroup>
+    <PackageJsonName Condition="$(PackageJsonName) == ''">reactproject.api</PackageJsonName>
+    <PackageJsonVersion Condition="$(PackageJsonVersion) == ''">1.0.0</PackageJsonVersion>
+    <PackageJsonDescription Condition="$(PackageJsonDescription) == ''"></PackageJsonDescription>
+    <PackageJsonMain Condition="$(PackageJsonMain) == ''">index.js</PackageJsonMain>
+    <PackageJsonScriptsTest Condition="$(PackageJsonScriptsTest) == ''">echo "Error: no test specified" &amp;&amp; exit 1</PackageJsonScriptsTest>
+    <PackageJsonKeywords Condition="$(PackageJsonKeywords) == ''">[]</PackageJsonKeywords>
+    <PackageJsonAuthor Condition="$(PackageJsonAuthor) == ''"></PackageJsonAuthor>
+    <PackageJsonLicense Condition="$(PackageJsonLicense) == ''">ISC</PackageJsonLicense>
+    <PackageJsonType Condition="$(PackageJsonType) == ''">commonjs</PackageJsonType>
+    <PackageJsonDependenciesCors Condition="$(PackageJsonDependenciesCors) == ''">^2.8.5</PackageJsonDependenciesCors>
+    <PackageJsonDependenciesExpress Condition="$(PackageJsonDependenciesExpress) == ''">^5.1.0</PackageJsonDependenciesExpress>
+    <PackageJsonDevdependenciesTypesCors Condition="$(PackageJsonDevdependenciesTypesCors) == ''">^2.8.19</PackageJsonDevdependenciesTypesCors>
+    <PackageJsonDevdependenciesTypesExpress Condition="$(PackageJsonDevdependenciesTypesExpress) == ''">^5.0.3</PackageJsonDevdependenciesTypesExpress>
+    <PackageJsonDevdependenciesTsNode Condition="$(PackageJsonDevdependenciesTsNode) == ''">^10.9.2</PackageJsonDevdependenciesTsNode>
+    <PackageJsonDevdependenciesTypescript Condition="$(PackageJsonDevdependenciesTypescript) == ''">^5.9.2</PackageJsonDevdependenciesTypescript>
+  </PropertyGroup>
+</Project>

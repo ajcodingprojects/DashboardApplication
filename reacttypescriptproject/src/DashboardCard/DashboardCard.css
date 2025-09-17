@@ -1,0 +1,293 @@
+.dashboard-card {
+    min-width: 300px;
+    flex: 0 0 calc(50% - 20px);
+    max-height: 500px;
+    min-height: 23vh;
+    margin: 10px;
+    padding: 0; /* Remove padding, let content handle spacing */
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+    
+    /* Enhanced professional glassy effect */
+    background: rgba(255, 255, 255, 0.02) !important;
+    backdrop-filter: blur(20px) saturate(180%);
+    border: 1px solid rgba(255, 255, 255, 0.06) !important;
+    border-radius: 16px; /* More modern rounded corners */
+    box-shadow: 
+        0 20px 60px rgba(0, 0, 0, 0.4),
+        0 8px 32px rgba(0, 0, 0, 0.25),
+        inset 0 1px 0 rgba(255, 255, 255, 0.08),
+        inset 0 -1px 0 rgba(0, 0, 0, 0.1),
+        inset 1px 0 0 rgba(255, 255, 255, 0.03),
+        inset -1px 0 0 rgba(0, 0, 0, 0.05) !important;
+    
+    /* Smooth transitions */
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    transform: translateY(0) scale(1);
+    
+    /* Subtle animation on load */
+    animation: cardFadeIn 0.6s ease-out;
+}
+
+.dashboard-card:hover {
+    background: rgba(255, 255, 255, 0.04) !important;
+    border-color: rgba(255, 255, 255, 0.1) !important;
+    box-shadow: 
+        0 30px 80px rgba(0, 0, 0, 0.5),
+        0 12px 40px rgba(0, 0, 0, 0.3),
+        inset 0 1px 0 rgba(255, 255, 255, 0.12),
+        inset 0 -1px 0 rgba(0, 0, 0, 0.08),
+        inset 1px 0 0 rgba(255, 255, 255, 0.05),
+        inset -1px 0 0 rgba(0, 0, 0, 0.03) !important;
+    transform: translateY(-2px) scale(1.01);
+}
+
+/* Active/Focus state */
+.dashboard-card:active,
+.dashboard-card:focus-within {
+    transform: translateY(0) scale(0.99);
+    box-shadow: 
+        0 15px 40px rgba(0, 0, 0, 0.35),
+        0 6px 20px rgba(0, 0, 0, 0.2),
+        inset 0 1px 0 rgba(255, 255, 255, 0.06),
+        inset 0 -1px 0 rgba(0, 0, 0, 0.12) !important;
+}
+
+.notes-display {
+    width: 95%;
+    flex: 0 0 auto;
+    min-height: 200px;
+    max-height: none;
+    height: 400px;
+    margin: 10px auto;
+    padding: 0 !important;
+    justify-content: flex-start;
+    align-items: stretch;
+    overflow: hidden;
+    border: 1.5px solid rgba(255, 255, 255, 0.08) !important;
+    border-radius: 20px; /* Slightly more rounded for notes */
+    position: relative;
+    
+    /* Premium glassy effect for notes */
+    background: 
+        linear-gradient(135deg, rgba(255, 255, 255, 0.06) 0%, rgba(255, 255, 255, 0.02) 100%),
+        rgba(0, 0, 0, 0.1) !important;
+    backdrop-filter: blur(25px) saturate(200%) brightness(1.1);
+    box-shadow: 
+        0 25px 70px rgba(0, 0, 0, 0.4),
+        0 10px 30px rgba(0, 0, 0, 0.25),
+        inset 0 2px 0 rgba(255, 255, 255, 0.1),
+        inset 0 -2px 0 rgba(0, 0, 0, 0.08),
+        inset 2px 0 0 rgba(255, 255, 255, 0.04),
+        inset -2px 0 0 rgba(0, 0, 0, 0.04) !important;
+    
+    /* Professional shadow for depth */
+    filter: drop-shadow(0 4px 20px rgba(0, 0, 0, 0.15));
+}
+
+.notes-display:hover {
+    border-color: rgba(255, 255, 255, 0.12) !important;
+    background: 
+        linear-gradient(135deg, rgba(255, 255, 255, 0.08) 0%, rgba(255, 255, 255, 0.04) 100%),
+        rgba(0, 0, 0, 0.08) !important;
+    transform: translateY(-1px);
+    box-shadow: 
+        0 30px 80px rgba(0, 0, 0, 0.45),
+        0 12px 35px rgba(0, 0, 0, 0.3),
+        inset 0 2px 0 rgba(255, 255, 255, 0.12),
+        inset 0 -2px 0 rgba(0, 0, 0, 0.06) !important;
+}
+
+/* Enhanced resize handle with professional styling */
+.resize-handle-custom {
+    position: absolute;
+    bottom: -1px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 16px;
+    cursor: ns-resize;
+    z-index: 1000;
+    
+    /* Professional handle design */
+    background: 
+        linear-gradient(90deg, 
+            transparent 0%, 
+            rgba(255, 255, 255, 0.08) 15%,
+            rgba(255, 255, 255, 0.15) 25%,
+            rgba(255, 255, 255, 0.2) 50%, 
+            rgba(255, 255, 255, 0.15) 75%,
+            rgba(255, 255, 255, 0.08) 85%,
+            transparent 100%
+        );
+    
+    border-radius: 8px 8px 0 0;
+    opacity: 0.6;
+    transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    backdrop-filter: blur(10px);
+    
+    /* Add subtle grip lines */
+    background-image: 
+        repeating-linear-gradient(90deg,
+            transparent 0%,
+            transparent 35%,
+            rgba(255, 255, 255, 0.1) 40%,
+            rgba(255, 255, 255, 0.1) 60%,
+            transparent 65%,
+            transparent 100%
+        );
+}
+
+.resize-handle-custom:hover {
+    opacity: 1;
+    height: 20px;
+    transform: translateX(-50%) translateY(2px);
+    background: 
+        linear-gradient(90deg, 
+            transparent 0%, 
+            rgba(255, 255, 255, 0.12) 15%,
+            rgba(255, 255, 255, 0.25) 25%,
+            rgba(255, 255, 255, 0.35) 50%, 
+            rgba(255, 255, 255, 0.25) 75%,
+            rgba(255, 255, 255, 0.12) 85%,
+            transparent 100%
+        );
+    
+    box-shadow: 
+        0 4px 15px rgba(255, 255, 255, 0.1),
+        inset 0 1px 0 rgba(255, 255, 255, 0.2);
+}
+
+.resize-handle-custom:active {
+    background: 
+        linear-gradient(90deg, 
+            transparent 0%, 
+            rgba(255, 255, 255, 0.15) 15%,
+            rgba(255, 255, 255, 0.3) 25%,
+            rgba(255, 255, 255, 0.45) 50%, 
+            rgba(255, 255, 255, 0.3) 75%,
+            rgba(255, 255, 255, 0.15) 85%,
+            transparent 100%
+        );
+    transform: translateX(-50%) translateY(1px) scale(0.98);
+}
+
+/* Professional loading animation */
+@keyframes cardFadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(20px) scale(0.95);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+/* Subtle pulse animation for interactive elements */
+@keyframes subtlePulse {
+    0%, 100% {
+        box-shadow: 
+            0 20px 60px rgba(0, 0, 0, 0.4),
+            0 8px 32px rgba(0, 0, 0, 0.25),
+            inset 0 1px 0 rgba(255, 255, 255, 0.08);
+    }
+    50% {
+        box-shadow: 
+            0 25px 70px rgba(0, 0, 0, 0.45),
+            0 10px 35px rgba(0, 0, 0, 0.3),
+            inset 0 1px 0 rgba(255, 255, 255, 0.1);
+    }
+}
+
+/* Add focus indicators for accessibility */
+.dashboard-card:focus-visible {
+    outline: 2px solid rgba(255, 255, 255, 0.3);
+    outline-offset: 2px;
+}
+
+/* Professional scrollbar styling for the resize area */
+.notes-display::-webkit-scrollbar {
+    width: 4px;
+}
+
+.notes-display::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.02);
+    border-radius: 2px;
+}
+
+.notes-display::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 2px;
+}
+
+.notes-display::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+/* Remove previous CSS-only resize handle */
+.notes-display::after {
+    display: none;
+}
+
+.notes-display::-webkit-resizer {
+    display: none;
+}
+
+/* Enhanced selection prevention during resize */
+.dashboard-card.resizing {
+    user-select: none;
+    pointer-events: none;
+}
+
+.dashboard-card.resizing * {
+    user-select: none;
+    pointer-events: none;
+}
+
+.dashboard-card.resizing .resize-handle-custom {
+    pointer-events: all;
+}
+
+/* Professional media queries for responsiveness */
+@media (max-width: 768px) {
+    .dashboard-card {
+        border-radius: 12px;
+        margin: 8px;
+    }
+    
+    .notes-display {
+        border-radius: 16px;
+        width: 98%;
+    }
+    
+    .resize-handle-custom {
+        width: 80px;
+        height: 14px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .dashboard-card,
+    .resize-handle-custom {
+        transition: none;
+        animation: none;
+    }
+}
+
+/* Dark mode specific enhancements */
+@media (prefers-color-scheme: dark) {
+    .dashboard-card {
+        background: rgba(255, 255, 255, 0.015) !important;
+        border-color: rgba(255, 255, 255, 0.04) !important;
+    }
+    
+    .notes-display {
+        background: 
+            linear-gradient(135deg, rgba(255, 255, 255, 0.04) 0%, rgba(255, 255, 255, 0.01) 100%),
+            rgba(0, 0, 0, 0.15) !important;
+    }
+}
